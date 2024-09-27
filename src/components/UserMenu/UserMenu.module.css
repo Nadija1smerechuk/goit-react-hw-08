@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 12px;
+    gap: 10px;
+}
+
+.username {
+    font-weight: 700;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.username>span {
+    color: rgb(0 255 55);
+    margin-left: 5px;
+}
+
+.btn {
+    border: 2px solid rgb(134, 134, 134);
+    transition: background-color 250ms linear, border-color 250ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: red;
+    ;
+    border-color: rgb(0, 0, 0);
+}
+
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        flex-direction: row;
+    }
+
+    .username {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 18px;
+    }
+}
