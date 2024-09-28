@@ -20,27 +20,22 @@ const validationSchema = Yup.object().shape({
     .required('Number is required'),
 });
 
-export default function ContactForm ({ initialValues, onFormSubmit })  {
+
+export default function ContactForm() {
   const dispatch = useDispatch();
   const userNameId = useId();
   const userNumber = useId();
 
   const handleSubmit = (values, actions) => {
-    if (initialValues.id) {
-      dispatch(editContact(values));
-      toast.success("Contact successfully updated!");
-    } else {
-      dispatch(addContact(values));
-      toast.success("Contact successfully created!");
-    }
-    onFormSubmit();
+    dispatch(addContact(values));
     actions.resetForm();
   };
 
 
+
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={{ name: "", number: "" }}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >

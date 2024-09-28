@@ -20,15 +20,8 @@ export default function LoginForm () {
   const userEmail = useId();
   const userPassword = useId();
 
-  const handleSubmit = (values, actions) => {
-    dispatch(logIn(values))
-      .unwrap()
-      .then(() => {
-        console.log('login success');
-      })
-      .catch(() => {
-        console.log('login error');
-      });
+    const handleSubmit = (values, actions) => {
+    dispatch(logIn(values));
     actions.resetForm();
   };
 
